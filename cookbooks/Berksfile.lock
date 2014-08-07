@@ -1,0 +1,17 @@
+DEPENDENCIES
+  build-essential
+  opencv
+    path: site-cookbooks/opencv
+  python
+    path: site-cookbooks/python
+  yum-epel
+
+GRAPH
+  build-essential (2.0.2)
+  opencv (0.1.0)
+  python (1.4.7)
+    build-essential (>= 0.0.0)
+    yum-epel (>= 0.0.0)
+  yum (3.2.0)
+  yum-epel (0.3.6)
+    yum (~> 3.0)
