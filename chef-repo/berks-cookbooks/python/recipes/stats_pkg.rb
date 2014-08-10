@@ -56,6 +56,9 @@ end
 	pandas
 	nltk
 	gensim
+	ipython[notebook]
+	pyzmq
+	tornado
 }.each do |pp|
 	python_pip pp do
 		action :install

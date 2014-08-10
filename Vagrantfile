@@ -1,4 +1,4 @@
-# -*- mode: ruby -*-
+
 # vi: set ft=ruby :
 
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
@@ -14,6 +14,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.box = "CentOS6.4_minimal"
   config.vm.box_url = "http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.4-x86_64-v20131103.box"
+#  config.vm.box = "CentOS6.4"
+#  config.vm.box_url = "https://github.com/2creatives/vagrant-centos/releases/download/v6.4.2/centos64-x86_64-20140116.box"
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
@@ -109,10 +111,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 		chef.run_list = [
 			"base",
 			"yum-epel",
-			"python",
-			"mecab",
-			"opencv",
-			"r"
+			"python"
 		]
 	end
 
