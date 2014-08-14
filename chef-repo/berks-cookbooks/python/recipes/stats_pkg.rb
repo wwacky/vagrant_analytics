@@ -33,6 +33,10 @@ include_recipe "python::virtualenv"
 	blas blas-devel
 	lapack lapack-devel
 	atlas-sse3 atlas-sse3-devel
+	readline-devel
+	openpgm zeromq zeromq-devel
+	freetype freetype-devel
+	libpng libpng-devel libpng-static
 }.each do |pkg|
     package pkg do
         action :install
@@ -59,6 +63,7 @@ end
 	ipython[notebook]
 	pyzmq
 	tornado
+	cython
 }.each do |pp|
 	python_pip pp do
 		action :install

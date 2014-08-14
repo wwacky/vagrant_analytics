@@ -25,6 +25,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.network "forwarded_port", guest: 8888, host: 8888
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -56,8 +57,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #   # Use VBoxManage to customize the VM. For example to change memory:
   #   vb.customize ["modifyvm", :id, "--memory", "1024"]
 		vb.name = "stats_vm"
-		vb.cpus = 2
-		vb.memory = 4096
+		vb.cpus = 4
+		vb.memory = 9000
 	end
   #
   # View the documentation for the provider you're using for more
@@ -103,7 +104,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #   # You may also specify custom JSON attributes:
   #   chef.json = { :mysql_password => "foo" }
 		chef.cookbooks_path = [
-			"./chef-repo/cookbooks",
 			"./chef-repo/site-cookbooks",
 			"./chef-repo/berks-cookbooks"
 		]
@@ -111,7 +111,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 		chef.run_list = [
 			"base",
 			"yum-epel",
-			"python"
+			"python",
+			"mecab"
 		]
 	end
 

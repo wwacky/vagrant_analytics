@@ -12,6 +12,7 @@
 %w{
 	vim
 	git
+	svn
 	unzip
 }.each do |pkgname|
 	package pkgname do
